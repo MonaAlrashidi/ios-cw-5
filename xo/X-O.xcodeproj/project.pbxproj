@@ -13,6 +13,9 @@
 		F39545E824A7DC6100CEB100 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F39545E624A7DC6100CEB100 /* Main.storyboard */; };
 		F39545EA24A7DC6500CEB100 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F39545E924A7DC6500CEB100 /* Assets.xcassets */; };
 		F39545ED24A7DC6500CEB100 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F39545EB24A7DC6500CEB100 /* LaunchScreen.storyboard */; };
+		F39545F624ABCEB200CEB100 /* song.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F39545F524ABCEB200CEB100 /* song.mp3 */; };
+		F39545F824ABD53100CEB100 /* applause.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F39545F724ABD53100CEB100 /* applause.mp3 */; };
+		F39545FA24ABD80800CEB100 /* doink.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F39545F924ABD80800CEB100 /* doink.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		F39545E924A7DC6500CEB100 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F39545EC24A7DC6500CEB100 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F39545EE24A7DC6500CEB100 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F39545F524ABCEB200CEB100 /* song.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = song.mp3; path = "../../../../../../../Music/iTunes/iTunes Media/Music/Unknown Artist/Unknown Album/song.mp3"; sourceTree = "<group>"; };
+		F39545F724ABD53100CEB100 /* applause.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = applause.mp3; path = ../../../../../../../Downloads/applause.mp3; sourceTree = "<group>"; };
+		F39545F924ABD80800CEB100 /* doink.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = doink.mp3; path = ../../../../../../../Downloads/doink.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +62,26 @@
 		F39545DF24A7DC6100CEB100 /* X-O */ = {
 			isa = PBXGroup;
 			children = (
+				F39545F424ABCE1700CEB100 /* Sound */,
 				F39545E024A7DC6100CEB100 /* AppDelegate.swift */,
 				F39545E224A7DC6100CEB100 /* SceneDelegate.swift */,
 				F39545E424A7DC6100CEB100 /* ViewController.swift */,
-				F39545E624A7DC6100CEB100 /* Main.storyboard */,
 				F39545E924A7DC6500CEB100 /* Assets.xcassets */,
 				F39545EB24A7DC6500CEB100 /* LaunchScreen.storyboard */,
+				F39545E624A7DC6100CEB100 /* Main.storyboard */,
 				F39545EE24A7DC6500CEB100 /* Info.plist */,
 			);
 			path = "X-O";
+			sourceTree = "<group>";
+		};
+		F39545F424ABCE1700CEB100 /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				F39545F524ABCEB200CEB100 /* song.mp3 */,
+				F39545F724ABD53100CEB100 /* applause.mp3 */,
+				F39545F924ABD80800CEB100 /* doink.mp3 */,
+			);
+			path = Sound;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,8 +142,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F39545F824ABD53100CEB100 /* applause.mp3 in Resources */,
 				F39545ED24A7DC6500CEB100 /* LaunchScreen.storyboard in Resources */,
+				F39545F624ABCEB200CEB100 /* song.mp3 in Resources */,
 				F39545EA24A7DC6500CEB100 /* Assets.xcassets in Resources */,
+				F39545FA24ABD80800CEB100 /* doink.mp3 in Resources */,
 				F39545E824A7DC6100CEB100 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

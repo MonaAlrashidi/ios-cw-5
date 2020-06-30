@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import AVFoundation
+
 
 class ViewController: UIViewController {
 
@@ -21,22 +23,47 @@ class ViewController: UIViewController {
     @IBOutlet weak var b9: UIButton!
     
     @IBOutlet weak var turnLabel: UILabel!
+    var backgroundMusic: AVAudioPlayer?
+    var win: AVAudioPlayer?
+    var doink: AVAudioPlayer?
+
     var buttons: [UIButton] = []
     var counter = 0
     override func viewDidLoad() {
         buttons = [b1, b2, b3, b4, b5, b6, b7, b8,  b9]
+        playMusic()
+
     }
     @IBAction func press(_ sender: UIButton) {
         if counter % 2 == 0{
             sender.setTitle("X", for: .normal)
-            sender.setTitleColor(.red, for: .normal)
+            sender.setTitleColor(.init(red: 255, green: 0, blue: 255, alpha: 1), for: .normal)
             turnLabel.text = "O turn"
+            let path = Bundle.main.path(forResource: "doink.mp3", ofType:nil)!
+            let url = URL(fileURLWithPath: path)
+
+            do {
+                doink = try AVAudioPlayer(contentsOf: url)
+                doink?.play()
+            } catch {
+                // couldn't load file :(
+            }
 
     }
         else {
             sender.setTitle("O", for: .normal)
-            sender.setTitleColor(.systemRed, for: .normal)
+            sender.setTitleColor(.init(red: 0, green: 191, blue: 255, alpha: 1), for: .normal)
             turnLabel.text = "X turn"
+            let path = Bundle.main.path(forResource: "doink.mp3", ofType:nil)!
+            let url = URL(fileURLWithPath: path)
+
+            do {
+                doink = try AVAudioPlayer(contentsOf: url)
+                doink?.play()
+            } catch {
+                // couldn't load file :(
+            }
+            
         }
         counter += 1
         sender.isEnabled = false
@@ -49,7 +76,7 @@ class ViewController: UIViewController {
     @IBAction func resetTapped() {
         restartGame()
     }
-    
+
     
     func winning (winner: String)
     {
@@ -68,10 +95,19 @@ class ViewController: UIViewController {
             }
             alertController.addAction(restartAction)
             present(alertController,  animated: true, completion: nil)
+            let path = Bundle.main.path(forResource: "applause.mp3", ofType:nil)!
+            let url = URL(fileURLWithPath: path)
+
+            do {
+                win = try AVAudioPlayer(contentsOf: url)
+                win?.play()
+            } catch {
+                // couldn't load file :(
+            }
             
         }
     }
-    func restartGame () {
+    func restartGame ()  {
         for b in buttons{
             b.setTitle("", for: .normal)
             b.titleLabel?.text = ""
@@ -81,6 +117,17 @@ class ViewController: UIViewController {
         counter = 0
         turnLabel.text = "X turn"
         
+    }
+    func playMusic(){
+        let path = Bundle.main.path(forResource: "song.mp3", ofType:nil)!
+        let url = URL(fileURLWithPath: path)
+
+        do {
+            backgroundMusic = try AVAudioPlayer(contentsOf: url)
+            backgroundMusic?.play()
+        } catch {
+            // couldn't load file :(
+        }
     }
     
 }
